@@ -1,0 +1,251 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bricardo | Evolution des Jeux-Videos</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    <link rel="stylesheet" href="CSS/MainPageStyle.css">
+</head>
+<body>
+    <!-- Loading Screen -->
+    <div id="preloader">
+        <div class="loader-container">
+            <div class="loader-row">
+                <div class="loader-wrapper">
+                    <div class="loader triangle">
+                        <svg viewBox="0 0 86 80">
+                            <polygon points="43 8 79 72 7 72"></polygon>
+                        </svg>
+                    </div>
+                    <div class="shape-label"></div>
+                </div>
+                <div class="loader-wrapper">
+                    <div class="loader">
+                        <svg viewBox="0 0 80 80">
+                            <circle id="test" cx="40" cy="40" r="32"></circle>
+                        </svg>
+                    </div>
+                    <div class="shape-label"></div>
+                </div>
+                <div class="loader-wrapper">
+                    <div class="loader">
+                        <svg viewBox="0 0 80 80">
+                            <rect x="8" y="8" width="64" height="64"></rect>
+                        </svg>
+                    </div>
+                    <div class="shape-label"></div>
+                </div>
+            </div>
+            <div class="loading-text">Loading BRICARDO</div>
+        </div>
+    </div>
+    <header>
+        <nav>
+            <div class="logo-container">
+                <div class="logo-icon">
+                    <img src="images/logoDesign.png" height="50px" width="50px" class="fas fa-infinity" alt="Logo">
+                </div>
+                <div class="logo-text">BRICARDO</div>
+            </div>
+            <div class="nav-links">
+                <a href="#" class="nav-link" data-target="home">Home</a>
+                <a href="#" class="nav-link" data-target="about">About</a>
+            </div>
+        </nav>
+    </header>
+
+    <div class="main-container">
+        <div class="road-container">
+            <div class="road" id="road"></div>
+
+            <!-- Timeline Markers - 6 stop signs -->
+            <div class="timeline-marker" style="left: 10%;" data-year="Contexte" data-info="The beginning of our journey"></div>
+            <div class="timeline-info" data-marker="10%">
+                <h3>Les Années 1970</h3>
+                <p>Les jeux d’arcade naissent en 1971 avec Computer Space. En 1972 sort Pong, devenu un classique incontournable du jeu vidéo.
+                </p>
+                <button class="btn" onclick="window.open('partie2.html', '_blank')">Learn More</button>
+            </div>
+
+            <div class="timeline-marker" style="left: 25%;" data-year="1970s" data-info="First product launch"></div>
+            <div class="timeline-info" data-marker="25%">
+                <h3>Les Années 1980</h3>
+                <p>
+                    Dans les années 1980, les fabricants d’arcades se tournent vers les consoles de salon, lançant une nouvelle ère du jeu vidéo à domicile.
+                </p>
+                <button class="btn" onclick="window.open('partie3.html', '_blank')">Learn More</button>
+            </div>
+
+            <div class="timeline-marker" style="left: 40%;" data-year="1980s" data-info="First major breakthrough"></div>
+            <div class="timeline-info" data-marker="40%">
+                <h3>Les Années 1990</h3>
+                <p>
+                    Les années 90 marquent un renouveau : plus d’innovations, plus de genres et une période très favorable pour les joueurs.
+                </p>
+                <button class="btn" onclick="window.open('partie4.html', '_blank')">Learn More</button>
+            </div>
+
+            <div class="timeline-marker" style="left: 55%;" data-year="1990s" data-info="Global expansion"></div>
+            <div class="timeline-info" data-marker="55%">
+                <h3>Les Années 2000</h3>
+                <p>
+                    Le marché des consoles se resserre autour des companies, tandis que le jeu sur PC explose grâce à la popularisation des ordinateurs et à Steam.
+                </p>
+                <button class="btn" onclick="window.open('partie5.html', '_blank')">Learn More</button>
+            </div>
+
+            <div class="timeline-marker" style="left: 70%;" data-year="2000s" data-info="Next generation launch"></div>
+            <div class="timeline-info" data-marker="70%">
+                <h3>Les Années 2010</h3>
+                <p>Les années 2010 sont une période de transition : pas de révolution majeure, mais de petites évolutions qui préparent les tendances du futur.</p>
+                <button class="btn" onclick="window.open('partie6.html', '_blank')">Learn More</button>
+            </div>
+
+            <div class="timeline-marker" style="left: 85%;" data-year="2010s" data-info="Future vision"></div>
+            <div class="timeline-info" data-marker="85%">
+                <h3>Les Années 2020</h3>
+                <p>Celles-ci ont débuté avec le covid, et avec les confinements, les gens ont eu beaucoup plus de temps libre</p>
+                <button class="btn" onclick="window.open('partie7.html', '_blank')">Learn More</button>
+            </div>
+
+            <div class="car" id="car">
+                <div class="car-body">
+                    <div class="car-window"></div>
+                    <div class="car-light front"></div>
+                    <div class="car-light rear"></div>
+                    <div class="wheel front"></div>
+                    <div class="wheel rear"></div>
+                </div>
+            </div>
+
+            <div class="year-indicator" id="yearIndicator">Contexte</div>
+        </div>
+    </div>
+
+    <!-- Detail Pages -->
+    <div id="foundation" class="content-section">
+        <a href="#" class="back-btn" data-target="home"><i class="fas fa-arrow-left"></i> Back to Timeline</a>
+        <h2>Contexte et les Prémices</h2>
+
+        <p>Les jeux vidéo sont aujourd'hui profondément ancrés dans notre culture, mais cela n'a pas toujours été le cas. Il y a à peine trente ans, leur place était bien plus marginale.</p>
+
+        <p>Les prémices des jeux vidéo remontent à 1948, sous des formes précaires. La première définition se limitait aux jeux affichés sur un tube cathodique, une technologie développée durant la Seconde Guerre mondiale pour l'effort de guerre.</p>
+
+        <div class="image-container">
+            <img src="images/Picture1.png" width ="450px" height ="200px" alt="Spacewar, l'un des premiers jeux vidéo">
+            <p class="image-caption">Exemple de Spacewar, un des premiers jeux vidéos</p>
+        </div>
+
+        <p>Avec le temps, la définition s'est élargie pour englober tous les jeux que nous connaissons aujourd'hui : jeux sur téléphone, console (portable ou non) et ordinateur. En somme, tout média interactif qui demande une participation active et une saisie via un clavier ou un périphérique similaire.</p>
+
+        <p>Bien que les premiers jeux aient été créés sur ordinateur, le véritable essor du jeu vidéo est souvent associé à l'avènement des jeux d'arcade.</p>
+
+        <div class="image-container">
+            <img src="images/Picture2.png" alt="Salle d'arcade typique de l'époque">
+            <p class="image-caption">Exemple d'une salle d'arcade de l'époque</p>
+        </div>
+
+        <p>Les jeux de combat, les jeux exigeants et les jeux à progression infinie étaient — et restent — les plus répandus dans les salles d'arcade, car leur conception facilitait la génération de revenus continus de la part des joueurs.</p>
+
+        <div class="image-container">
+            <img src="images/Picture3.png" alt="Détail de bornes d'arcade">
+            <p class="image-caption">Des bornes d'arcades de plus près</p>
+        </div>
+    </div>
+
+    <div id="product" class="content-section">
+        <a href="#" class="back-btn" data-target="home"><i class="fas fa-arrow-left"></i> Back to Timeline</a>
+        <h2>1970s: First Product Launch</h2>
+        <p>In the 1970s, we launched our first major product - an immersive digital platform that allowed users to create and explore virtual environments with unprecedented ease. This product marked our entry into the market and established our reputation for innovation.</p>
+        <p>The platform featured intuitive design tools, real-time collaboration capabilities, and seamless integration with existing workflows. Early adopters praised its user-friendly interface and powerful capabilities.</p>
+        <p>Within six months of launch, we had onboarded over 10,000 users and secured partnerships with several educational institutions and creative agencies. This success validated our approach and provided the foundation for future innovations.</p>
+    </div>
+
+    <div id="innovation" class="content-section">
+        <a href="#" class="back-btn" data-target="home"><i class="fas fa-arrow-left"></i> Back to Timeline</a>
+        <h2>1980s: Innovation Breakthrough</h2>
+        <p>The 1980s marked a turning point for Bricardo with the development of our proprietary neural interface technology. After years of intensive research and development, our team achieved what many thought was impossible: a non-invasive brain-computer interface that could interpret user intent with unprecedented accuracy.</p>
+        <p>This breakthrough allowed us to create digital experiences that felt more natural and intuitive than anything available on the market. Users could navigate complex environments with simple thought patterns, making our technology particularly valuable in accessibility applications.</p>
+        <p>The innovation earned us several industry awards and recognition from leading tech publications. More importantly, it opened up new possibilities for how humans could interact with digital systems, setting the stage for even more ambitious projects in the years to come.</p>
+    </div>
+
+    <div id="expansion" class="content-section">
+        <a href="#" class="back-btn" data-target="home"><i class="fas fa-arrow-left"></i> Back to Timeline</a>
+        <h2>1990s: Global Expansion</h2>
+        <p>With our technology gaining international recognition, the 1990s was the decade we expanded our operations globally. We established headquarters in three key regions: North America, Europe, and Asia-Pacific, each tailored to address the unique needs and opportunities of their markets.</p>
+        <p>This expansion wasn't just about geographical growth—it was about cultural integration. We formed strategic partnerships with local universities, research institutions, and industry leaders to ensure our technology development remained globally informed and locally relevant.</p>
+        <p>By the end of the 1990s, our team had grown to over 200 employees worldwide, representing 25 different nationalities. This diversity became one of our greatest strengths, bringing varied perspectives that fueled our innovation and helped us create products with truly global appeal.</p>
+    </div>
+
+    <div id="quantum" class="content-section">
+        <a href="#" class="back-btn" data-target="home"><i class="fas fa-arrow-left"></i> Back to Timeline</a>
+        <h2>2000s: Quantum Leap</h2>
+        <p>In the 2000s, Bricardo made our most ambitious move yet: the launch of our quantum computing division. Recognizing the limitations of classical computing for complex simulations, we assembled a world-class team of quantum physicists and computer scientists to explore this frontier.</p>
+        <p>Our quantum initiatives focused on solving previously intractable problems in digital simulation, from real-time environmental rendering to predictive behavior modeling. Early results showed promise for creating experiences that were orders of magnitude more complex and realistic than anything possible with traditional computing.</p>
+        <p>While still in its early stages, our quantum computing work has already attracted partnerships with leading research institutions and government agencies. We believe this technology will form the foundation of the next generation of digital experiences, potentially revolutionizing fields from education to healthcare.</p>
+    </div>
+
+    <div id="future" class="content-section">
+        <a href="#" class="back-btn" data-target="home"><i class="fas fa-arrow-left"></i> Back to Timeline</a>
+        <h2>2010s: Future Vision</h2>
+        <p>Looking ahead to the 2010s and beyond, we're working on technologies that will fundamentally transform how humans interact with digital information. Our research and development teams are exploring fully immersive virtual experiences that seamlessly blend digital and physical realities.</p>
+        <p>We envision a future where digital environments are indistinguishable from physical ones, where users can interact with complex data through intuitive gestures and thoughts, and where our technology enhances human capabilities rather than replacing them.</p>
+        <p>While the path forward holds many challenges, we're committed to pushing the boundaries of what's possible and creating technologies that enrich human experience and expand our collective potential.</p>
+    </div>
+
+    <footer>
+        <div class="social-links">
+            <a href="https://x.com" target="_blank" title="Follow us on X">
+                <i class="fab fa-x-twitter"></i>
+            </a>
+            <a href="https://facebook.com" target="_blank" title="Suivez nous sur Facebook">
+                <i class="fab fa-facebook-f"></i>
+            </a>
+            <a href="https://instagram.com" target="_blank" title="Suivez nous sur Instagram">
+                <i class="fab fa-instagram"></i>
+            </a>
+            <a href="https://linkedin.com" target="_blank" title="Connecter sur LinkedIn">
+                <i class="fab fa-linkedin-in"></i>
+            </a>
+            <a href="https://youtube.com" target="_blank" title="Abonnez vous sur YouTube">
+                <i class="fab fa-youtube"></i>
+            </a>
+        </div>
+
+        <!-- Combined About and Sources Container - Initially hidden -->
+        <div class="footer-content-container" style="display: none;">
+            <!-- About Paragraph Section -->
+            <div class="about-paragraph" id="aboutParagraph">
+                <div class="about-content">
+                    <h3>About Bricardo</h3>
+                    <p>
+                        Bricardo est une compagnie faite par deux étudiants en informatique qui espèrent pouvoir archiver
+                        l'histoire des jeux vidéos, en les présentant d'une manière ludique pour permettre une accessibilité à tout le monde,
+                        et un amusement certain à ceux qui décident de rechercher des informations sur le site !
+                    </p>
+                </div>
+            </div>
+
+            <!-- Sources Section -->
+            <div class="sources-section">
+                <h3>Sources</h3>
+                <ul class="sources-list">
+                    <li><a href="https://en.wikipedia.org/wiki/History_of_video_games" target="_blank">History of video games - Wikipedia</a></li>
+                    <li><a href="https://en.wikipedia.org/wiki/List_of_years_in_video_games" target="_blank">List of years in video games - Wikipedia</a></li>
+                    <li><a href="https://youtu.be/gv5tzFa2yBg?si=qdWDNLLyq1fgcimV" target="_blank">"Ce n'est pas de l'esport, c'est la FGC" - YouTube</a></li>
+                    <li>Deepseek AI Assistant</li>
+                    <li><a href="https://www.instagram.com/the_coding_wizard?utm_source=ig_web_button_share_sheet&igsh=ZDNlZDc0MzIxNw==" target="_blank">"the_coding_wizard - Instagram</a></li>
+                    <li>Personal knowledge and general culture</li>
+                </ul>
+            </div>
+        </div>
+
+        <div class="copyright">
+            &copy; 2025 Bricardo. All rights reserved.
+        </div>
+    </footer>
+
+    <script src="JS/MainPageJS.js"></script>
+</body>
+</html>

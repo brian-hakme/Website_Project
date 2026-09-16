@@ -1,0 +1,319 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Partie 2: Les Années 1970 - Bricardo</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+
+        :root {
+            --primary: #00ffff;
+            --secondary: #0080ff;
+            --dark: #0a0a16;
+            --darker: #050510;
+            --light: #e0e0ff;
+        }
+
+        body {
+            background: var(--dark);
+            color: var(--light);
+            min-height: 100vh;
+        }
+
+        header {
+            background: rgba(10, 15, 30, 0.85);
+            backdrop-filter: blur(10px);
+            padding: 1.2rem 5%;
+            position: fixed;
+            width: 100%;
+            z-index: 1000;
+            border-bottom: 1px solid rgba(64, 224, 208, 0.2);
+        }
+
+        nav {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .logo-container {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+        }
+
+        .logo-text {
+            font-size: 1.8rem;
+            font-weight: 700;
+            background: linear-gradient(90deg, var(--primary), var(--secondary));
+            -webkit-background-clip: text;
+            background-clip: text;
+            color: transparent;
+            letter-spacing: 1px;
+        }
+
+        .nav-links {
+            display: flex;
+            gap: 2rem;
+        }
+
+            .nav-links a {
+                color: #b0b0ff;
+                text-decoration: none;
+                font-weight: 500;
+                padding: 0.5rem 1.2rem;
+                border-radius: 30px;
+                transition: all 0.3s ease;
+                position: relative;
+                overflow: hidden;
+            }
+
+                .nav-links a:hover {
+                    color: var(--primary);
+                    box-shadow: 0 0 15px rgba(0, 255, 255, 0.5);
+                    background: rgba(0, 255, 255, 0.1);
+                }
+
+        .detail-container {
+            padding-top: 140px;
+            padding-bottom: 80px;
+            min-height: 100vh;
+        }
+
+        .content-wrapper {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+
+        .back-btn {
+            display: inline-flex;
+            align-items: center;
+            gap: 10px;
+            background: linear-gradient(90deg, var(--primary), var(--secondary));
+            color: var(--darker);
+            padding: 12px 25px;
+            border-radius: 30px;
+            text-decoration: none;
+            font-weight: 600;
+            margin-bottom: 40px;
+            transition: all 0.3s ease;
+        }
+
+            .back-btn:hover {
+                transform: translateY(-3px);
+                box-shadow: 0 5px 20px rgba(0, 255, 255, 0.6);
+            }
+
+        .page-header {
+            text-align: center;
+            margin-bottom: 50px;
+        }
+
+            .page-header h1 {
+                color: var(--primary);
+                font-size: 3.5rem;
+                margin-bottom: 15px;
+                text-transform: uppercase;
+                letter-spacing: 2px;
+            }
+
+            .page-header .year-badge {
+                display: inline-block;
+                background: rgba(0, 150, 255, 0.2);
+                color: var(--primary);
+                padding: 8px 20px;
+                border-radius: 30px;
+                font-size: 1.2rem;
+                border: 1px solid rgba(0, 255, 255, 0.3);
+            }
+
+        .content-section {
+            background: rgba(15, 20, 40, 0.7);
+            border-radius: 20px;
+            padding: 40px;
+            margin-bottom: 40px;
+            border: 1px solid rgba(0, 255, 255, 0.2);
+            backdrop-filter: blur(10px);
+        }
+
+            .content-section h2 {
+                color: var(--secondary);
+                font-size: 2.2rem;
+                margin-bottom: 25px;
+                border-bottom: 2px solid rgba(0, 255, 255, 0.3);
+                padding-bottom: 15px;
+            }
+
+            .content-section h3 {
+                color: var(--primary);
+                font-size: 1.5rem;
+                margin: 25px 0 15px 0;
+            }
+
+            .content-section p {
+                line-height: 1.8;
+                margin-bottom: 20px;
+                font-size: 1.1rem;
+                color: #c0c0ff;
+            }
+
+        .highlight-box {
+            background: linear-gradient(135deg, rgba(0, 150, 255, 0.1), rgba(0, 255, 255, 0.2));
+            border-left: 4px solid var(--primary);
+            padding: 25px;
+            margin: 30px 0;
+            border-radius: 0 15px 15px 0;
+        }
+
+            .highlight-box h3 {
+                color: var(--primary);
+                margin-bottom: 15px;
+                font-size: 1.5rem;
+            }
+
+        .image-container {
+            width: 100%;
+            text-align: center;
+            margin: 40px 0;
+        }
+
+        .game-image {
+            max-width: 100%;
+            height: auto;
+            border-radius: 15px;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
+            border: 2px solid rgba(0, 255, 255, 0.3);
+        }
+
+        .image-caption {
+            font-size: 0.95rem;
+            color: #a0a0ff;
+            margin-top: 15px;
+            font-style: italic;
+            text-align: center;
+            line-height: 1.5;
+        }
+
+        .key-points {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 25px;
+            margin: 40px 0;
+        }
+
+        .key-point {
+            background: rgba(0, 150, 255, 0.1);
+            padding: 25px;
+            border-radius: 15px;
+            border: 1px solid rgba(0, 255, 255, 0.2);
+        }
+
+            .key-point h4 {
+                color: var(--primary);
+                margin-bottom: 15px;
+                font-size: 1.3rem;
+            }
+
+        @media (max-width: 768px) {
+            .page-header h1 {
+                font-size: 2.5rem;
+            }
+
+            .content-section {
+                padding: 25px;
+            }
+
+            .key-points {
+                grid-template-columns: 1fr;
+            }
+
+            .nav-links {
+                gap: 1rem;
+            }
+
+            .game-image {
+                max-width: 90%;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <nav>
+            <div class="logo-container">
+                <div class="logo-icon">
+                    <img src="images/logoDesign.png" height="50px" width="50px" alt="Bricardo Logo">
+                </div>
+                <div class="logo-text">BRICARDO</div>
+            </div>
+            <div class="nav-links">
+                <a href="MainPage.html" class="nav-link">Home</a>
+                <a href="about.html" class="nav-link">About</a>
+            </div>
+        </nav>
+    </header>
+
+    <div class="detail-container">
+        <div class="content-wrapper">
+
+            <div class="page-header">
+                <h1>Les Années 1970</h1>
+                <div class="year-badge">1971-1979</div>
+            </div>
+
+            <div class="content-section">
+                <h2>L'Ère des Arcades</h2>
+
+                <p>Les jeux d'arcades ont commencé leur apparition en 1971, avec le jeu Computer Space, un jeu de combat spatial similaire à Space Invaders. L'année suivante sortit Pong, un jeu qui allait marquer l'histoire du jeu vidéo.</p>
+
+                <div class="image-container">
+                    <img src="images/Picture4.png" alt="Computer Space - Premier jeu d'arcade" class="game-image">
+                    <p class="image-caption">Computer Space - Le premier jeu d'arcade commercial (1971)</p>
+                </div>
+
+                <h3>Les Contrôles Électro-Mécaniques</h3>
+                <p>Les contrôles de cette époque étaient principalement électro-mécaniques : lorsqu'on pressait les boutons ou manipules (relativement sensibles à la pression), ces mouvements physiques étaient transmis électriquement vers les processeurs pour être traduits en actions sur l'écran.</p>
+
+                <div class="image-container">
+                    <img src="images/Picture5.png" alt="Schéma d'une borne d'arcade" class="game-image">
+                    <p class="image-caption">Exemple explicatif du fonctionnement d'une borne d'arcade</p>
+                </div>
+
+                <h3>Les Pôles Géographiques</h3>
+                <p>Les jeux d'arcade étaient surtout populaires au Japon et aux États-Unis, ce qui permit à des compagnies de ces deux régions de développer des machines d'arcade. Deux des acteurs principaux étaient Sega (États-Unis) et Atari (Japon), qui allaient dominer le marché pendant cette décennie.</p>
+
+                <div class="highlight-box">
+                    <h3>Contexte Technologique</h3>
+                    <p>Bien que les jeux sur ordinateur existaient déjà à cette époque, ils étaient très peu répandus. Posséder un ordinateur était beaucoup plus coûteux qu'aujourd'hui, et la plupart des jeux disponibles n'étaient que de simples clones de jeux d'arcade.</p>
+                </div>
+
+                <h2>L'Héritage des Années 1970</h2>
+                <p>Cette décennie a jeté les bases de l'industrie du jeu vidéo moderne. Les principes établis durant cette période - notamment la monétisation par partie, l'accessibilité au grand public et l'importance de l'expérience de jeu immédiate - continuent d'influencer le design des jeux aujourd'hui.</p>
+
+                <div class="key-points">
+                    <div class="key-point">
+                        <h4>Innovation Technologique</h4>
+                        <p>Développement des premières interfaces électro-mécaniques permettant une interaction physique avec le jeu.</p>
+                    </div>
+                    <div class="key-point">
+                        <h4>Émergence du Marché</h4>
+                        <p>Création d'un marché de divertissement public accessible dans les salles d'arcade à travers le monde.</p>
+                    </div>
+                    <div class="key-point">
+                        <h4>Modèle Économique</h4>
+                        <p>Établissement du modèle "pay-per-play" qui financerait l'industrie des arcades pendant des décennies.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+</html>
